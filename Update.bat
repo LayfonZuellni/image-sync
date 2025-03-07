@@ -3,6 +3,11 @@ echo [INFO] Mise à jour Git en cours...
 
 cd /d "D:\Star Academy World\MCStatsCompiler-main\excel2img\Image-sync\image-sync"
 
+:: Modifier légèrement les images pour forcer GitHub à les détecter comme nouvelles
+for %%f in (*.png *.jpg *.jpeg *.gif) do (
+    copy /b "%%f" +,, "%%f"
+)
+
 :: Forcer la mise à jour des images en les supprimant et les réajoutant
 git rm --cached *.png *.jpg *.jpeg *.gif >nul 2>&1
 git add --force *.png *.jpg *.jpeg *.gif
