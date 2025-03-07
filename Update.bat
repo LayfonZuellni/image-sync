@@ -19,7 +19,7 @@ git commit -m "Auto-update %date% %time%"
 git push origin main
 
 echo [INFO] Mise à jour terminée. Attente de %INTERVAL% secondes...
-timeout /t %INTERVAL% /nobreak >nul
+rem timeout désactivé %INTERVAL% /nobreak >nul
 
 :: Recommencer la boucle
-goto loop
+
